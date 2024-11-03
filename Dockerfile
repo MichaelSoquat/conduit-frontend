@@ -2,7 +2,7 @@ FROM node:18 AS angular
 
 WORKDIR /app
 COPY . $WORKDIR
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli && npm install
 RUN ng build
 
 FROM nginx:alpine
