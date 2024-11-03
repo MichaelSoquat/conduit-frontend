@@ -7,7 +7,7 @@ ARG API_URL
 
 RUN npm install -g @angular/cli && npm install
 RUN node set-env.js
-RUN ng build
+RUN ng build --prod
 
 FROM nginx:alpine
 COPY --from=angular /app/dist/angular-conduit /usr/share/nginx/html
